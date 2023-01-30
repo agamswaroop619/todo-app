@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="trends.css">
+<title>Project 2: Task App</title>
+</head>
+<main>
+    <body>
+<nav>
+    <div class="nav">Simple Tasks Web-based app</div>
+</nav>
+
+    <div class="addpart">
+<input id="newtodo" class="in" type="text" placeholder="Add New Tasks" value="" ondblclick="addtodos();" />
+<input type="date"  class="dp" id='datepicker' />
+</div>
+<div class="plus1">
+    <button class="plus" onclick="addtodos();">
+        <img src="data:image/png;base64,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">
+    </button>
+    </div>
+
+<div id="tasks" class="tasksbar"></div>
+</main>
+<main class="extra">
+    <p class="e1">Click on '+' to Add Tasks</p>
+    <p class="e1">Click on Current Tasks to delete the Reminder</p>
+</main>
+<script>
+    let todos;
+    const savedTodos =JSON.parse(localStorage.getItem('todos'));
+
+    var inp= document.getElementById("newtodo");
+    inp.addEventListener("keypress", function(event){
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addtodos();
+  }
+  });
+    if(Array.isArray(savedTodos)){
+        todos=savedTodos;
+    }
+    else{
+    todos=[
+        {title:'Get Groceries', dueDate:'2023-10-04',id:'1'},
+        {title:'Water Plants', dueDate:'2023-12-04',id:'2'},
+        {title:'Study', dueDate:'2022-12-02',id:'3'}
+        ];
+    }
+        let todos1=todos;
+
+    render();
+
+        function addtodos()
+        {
+            todos=[];
+        let textbox= document.getElementById("newtodo");
+        let datepicker= document.getElementById('datepicker');
+        let duedate=datepicker.value;
+        let textbox1= textbox.value;
+        let ido= ''+new Date().getTime();
+        //To re-initialise the placeholder in input element
+        if(textbox1 != '' && duedate != ''){
+        document.getElementById("newtodo").value='';
+        document.getElementById("datepicker").value='';
+        todos.push({title:textbox1,
+             dueDate:duedate,
+            id: ido});
+         todos1.push({title:textbox1,
+             dueDate:duedate,
+            id:ido});
+        render();
+        saveitem();
+        }
+        else{
+            alert('Please write both Due Date & Task name')
+        }
+        }
+
+
+        function render(){
+        todos.forEach(
+            function printtodo(todonew)
+                {
+                let element=document.createElement('button');
+
+                var letters = 'BCDEF'.split('');
+                var color = '#';
+                for (var i = 0; i < 6; i++ ) {
+                    color += letters[Math.floor(Math.random() * letters.length)];
+                }
+                element.style.backgroundColor= color;
+                element.classList.add('tasks');
+                const disbt= () =>{
+                element.remove();
+                idi=todonew.id;
+                    rem(idi);
+                    saveitem();
+                };
+                
+                element.addEventListener("click",disbt);
+
+                element.innerText=todonew.title + ' ('+todonew.dueDate + ')' ;
+                let tasks=document.getElementById("tasks");
+                tasks.appendChild(element);
+            }
+        );
+        }
+
+        function rem(idi){
+            todos1=todos1.filter(function (todo){
+                    if(todo.id===idi)
+                    {
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                });
+                saveitem();
+            }
+
+
+        function saveitem(){
+            localStorage.setItem('todos', JSON.stringify(todos1));
+        }
+    </script>   
+</body>
+
+
+</html>
